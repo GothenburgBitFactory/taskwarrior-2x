@@ -160,7 +160,7 @@ if (EXISTS performance)
   add_subdirectory (performance EXCLUDE_FROM_ALL)
 endif (EXISTS performance)
 
-set (doc_FILES NEWS ChangeLog README.md INSTALL AUTHORS COPYING LICENSE)
+set (doc_FILES NEWS ChangeLog README.md INSTALL AUTHORS LICENSE)
 foreach (doc_FILE ${doc_FILES})
   install (FILES ${doc_FILE}  DESTINATION ${TASK_DOCDIR})
 endforeach (doc_FILE)
