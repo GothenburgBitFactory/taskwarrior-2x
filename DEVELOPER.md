@@ -1,19 +1,16 @@
 # How to Build Taskwarrior
 
 ## Satisfy the Requirements:
- * CMake 3.0 or later
- * gcc 7.0 or later, clang 6.0 or later, or a compiler with full C++17 support
+ * CMake 3.5 or later
+ * a compiler with C++17 support
  * libuuid (if not on macOS)
  * gnutls (optional)
  * python 3 (optional, for running the test suite)
 
 ## Obtain and build code:
 ```
-    $ git clone --recursive https://github.com/GothenburgBitFactory/taskwarrior taskwarrior.git
-    $ cd taskwarrior.git
-    $ git checkout develop               # Latest dev branch
-    $ git submodule init                 # This is now done by cmake as a test
-    $ git submodule update               # Update the libhsared.git submodule
+    $ git clone https://github.com/GothenburgBitFactory/taskwarrior-2x
+    $ cd taskwarrior-2x
     $ cmake -DCMAKE_BUILD_TYPE=debug .   # debug or release. Default: neither
     $ make VERBOSE=1 -j4                 # Shows details, builds using 4 jobs
                                          # Alternately 'export MAKEFLAGS=-j 4'
@@ -116,11 +113,6 @@
   The tests are written in Python, Bash and C++, and all use TAP.
 
 ## Tests needed
-
-  * Take a look at the bug database (https://github.com/GothenburgBitFactory/taskwarrior/issues)
-    and notice that many issues, open and closed, have the "needsTest" label.
-    These are things that we would like to see in the test suite, as regression
-    tests.
 
   All new unit tests should follow the test/template.t standard.
 
